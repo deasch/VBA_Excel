@@ -18,5 +18,5 @@ Sub HttpRequestPost()
         'Debug.Print .Status
     End With
     
-    Set objXMLHttpRequest = Nothing
+    objXMLHttpRequest = Nothing
 End sub
