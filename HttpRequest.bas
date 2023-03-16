@@ -2,15 +2,15 @@ Sub HttpRequest_POST()
     Dim objXMLHttpRequest As Object: Set objXMLHttpRequest = CreateObject("MSXML2.XMLHTTP")
     Dim strXHMHttpResponseText As String
     
-    Dim strUrl As String: strUrl = "https://gssnplus-int.i.mercedes-benz.com/int/gssnplus-api/api/v1/outlets/search?page=0&pageSize=10"
+    Dim strUrl As String: strUrl = "https://"
     Dim strContentType As String: strContentType = "application/json"
-    Dim strAuth As String: strAuth = "a853a413-5f45-461c-a3d6-3aa5a8b8c6a3"
-    Dim strPayload As String: strPayload = "{  ""names"": [    ""*Burger Schloz*""  ]}"
+        Dim strAuth As String: strAuth = "" 'Bsp: x-api-key/bearer/authorization
+        Dim strPayload As String: strPayload = "{  ""key"": [    ""*value*""  ]}"
     
     With objXMLHttpRequest
         .Open "POST", strUrl, False
         .setRequestHeader "Content-Type", strContentType
-        .setRequestHeader "x-api-key", strAuth
+        .setRequestHeader "x-api-key", strAuth 'Bsp: x-api-key/bearer/authorization
         .send strPayload
         strXHMHttpResponseText = .responseText
         'Debug.Print .responseText
